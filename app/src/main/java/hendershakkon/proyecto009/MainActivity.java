@@ -9,7 +9,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private EditText et1,et2 ;
-
+    private String longitud;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +24,11 @@ public class MainActivity extends AppCompatActivity {
         String clave=et2.getText().toString();
         if (clave.length()==0) {
             Toast notificacion = Toast.makeText(this, "La clave no puede quedar vacía", Toast.LENGTH_LONG);
-                    notificacion.show();
+            notificacion.show();
+        }else{
+            longitud= Integer.toString(clave.length());
+            Toast notificacion = Toast.makeText(this, "La longitud es : "+longitud, Toast.LENGTH_LONG);
+            notificacion.show();
         }
     }
 }
